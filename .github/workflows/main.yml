@@ -42,7 +42,7 @@ jobs:
 
       - name: Run MLflow Project
         run: |
-          mlflow run MLProject --run-name -P data_path=MLProject/namadataset_preprocessing/iris_preprocessed.csv -P tune_hyperparameters=true
+          mlflow run MLProject --run-name "iris-model-run" -P data_path=MLProject/namadataset_preprocessing/iris_preprocessed.csv -P tune_hyperparameters=true
 
       - name: Register Model in MLflow Model Registry
         run: |
