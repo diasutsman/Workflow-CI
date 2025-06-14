@@ -38,6 +38,8 @@ jobs:
             -P data_path="MLProject/heart_failure_preprocessing/heart_failure_preprocessed.csv" \
             -P run_name="${{ github.event.inputs.run_name || 'github-actions-run' }}" 
 
+          conda activate mlflow-7fcb55a4ee232a636d1a93d3efb5e92e5f954b1d
+
       - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v4
         with:
