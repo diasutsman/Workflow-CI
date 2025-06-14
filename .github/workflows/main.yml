@@ -36,8 +36,7 @@ jobs:
           python -m mlflow run MLProject \
             --run-name "${{ github.event.inputs.run_name || 'github-actions-run' }}" \
             -P data_path="MLProject/heart_failure_preprocessing/heart_failure_preprocessed.csv" \
-            -P run_name="${{ github.event.inputs.run_name || 'github-actions-run' }}" \
-            --no-conda
+            -P run_name="${{ github.event.inputs.run_name || 'github-actions-run' }}" 
 
       - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v4
