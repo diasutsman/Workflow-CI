@@ -19,6 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: latest
+          python-version: 3.9
+          channels: defaults,conda-forge
+          activate-conda: true # Ensure Conda is activated
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
