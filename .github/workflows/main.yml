@@ -31,8 +31,8 @@ jobs:
       run: |
         cd ${{ github.workspace }}
         mlflow run MLProject \
-          --no-conda \
-          --run-id ${{ github.run_id }} \
+          --run-name "${{ github.event.inputs.run_name || 'github-actions-run' }}" \
+          -P data_path="MLProject/heart_failure_preprocessing/heart_failure_preprocessed.csv" \
           -P run_name="${{ github.event.inputs.run_name || 'github-actions-run' }}"
           
     - name: Upload MLflow artifacts
